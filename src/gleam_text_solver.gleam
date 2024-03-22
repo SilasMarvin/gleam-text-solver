@@ -117,10 +117,9 @@ fn cross_strings(s1: String, s2: String) {
 }
 
 fn cross(p1: Individual, p2: Individual) -> Individual {
-  let text =
-    cross_strings(p1.text, p2.text)
-    |> result.unwrap("")
-  Individual(text: text, display_text: "", score: 0)
+  cross_strings(p1.text, p2.text)
+  |> result.unwrap("")
+  |> Individual(display_text: "", score: 0)
 }
 
 fn permute_until_done(
@@ -157,7 +156,7 @@ fn permute_until_done(
       |> permute_until_done(target_text, population_size, generation + 1)
     }
     True -> {
-      print_population(list.take(population, population_size / 2))
+      io.println("\nDone in  " <> int.to_string(generation) <> " generations")
     }
   }
 }
