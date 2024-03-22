@@ -1,4 +1,4 @@
-# genetic_algorithms_with_gleam
+# Gleam Text Solver
 
 A super simple genetic algorithm implementation in gleam that solves a string
 
